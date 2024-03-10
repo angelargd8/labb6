@@ -1,0 +1,24 @@
+{
+  "type":"module",
+  "name": "lab6-node",
+  "version": "1.0.0",
+  "description": "lab6 para node",
+  "main": "main.js",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "angel",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.3",
+    "mysql2": "^3.9.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-plugin-react": "^7.34.0"
+  }
+}

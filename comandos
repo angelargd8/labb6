@@ -1,0 +1,13 @@
+---versiones:
+node -v
+
+npm -v
+
+---generar una aplicacion tipo json:
+npm init
+
+---correr el coso
+node main.json
+
+--update npm version
+npm install

@@ -1,0 +1,16 @@
+
+------uso de eslint: --------------------------------
+
+npm install -g eslint
+npm install --save-dev eslint
+
+lo que se pone en el json:
+"scripts": {
+  "lint": "./node_modules/.bin/eslint ."
+}
+
+uso de npx:
+
+npx eslint .
+
+npx eslint --init

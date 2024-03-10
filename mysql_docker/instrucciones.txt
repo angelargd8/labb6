@@ -1,0 +1,24 @@
+docker build -t mysql_blog .
+
+docker run --name mysql_container -d -p 33068:3306 mysql_blog
+
+
+//derecho publico  -izquierdo privado
+
+este si es:
+bcc4842044f096650bbedfbf3c9bbe32525c3b6b03233de69aa16e0235986498
+
+este ya no xq lo borre:
+801a9dfca4d99234a4606fed0a13779e1df090ee58a4b4fdfbed1cdc1844871c
+
+este es del otro:
+f558340c3c18b1a63f53b0384d6e53507f7ae76579dc7e030ee7d290f2824ace
+
+
+root_password
+
+Host: 127.0.0.1
+Puerto: 3306
+Usuario: blog_user
+Password: root_password
+Base de Datos: blog_db
