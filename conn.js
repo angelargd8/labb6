@@ -1,5 +1,4 @@
-//import mysql from 'mysql2/promise'
-const mysql = require('mysql2/promise')
+import mysql from 'mysql2/promise'
 
 const pool = mysql.createPool({
     host: 'localhost',
@@ -11,18 +10,4 @@ const pool = mysql.createPool({
     queueLimit: 0
 })
 
-/*
-//consulta para validar la conexion
-pool.query('SELECT id from blogs LIMIT 1')
-    .then(() => {
-        console.log('Conexión exitosa a la base de datos') 
-    })
-    .catch(err =>{ 
-        console.error('Error en la conexión a la base de datos', err)
-    });
-*/
-
-
-//export default pool
-
-module.exports = pool
+export default pool
