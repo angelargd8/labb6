@@ -1,0 +1,14 @@
+--instalar swagger
+
+npm install swagger-ui-express
+
+npm install js-yaml
+
+npm install -g swagger2openapi
+
+
+http://127.0.0.1:3001/api-docs/
+
+validar yaml:
+
+https://www.yamllint.com/
