@@ -15,10 +15,7 @@ const app = express()
 const swaggerDocument = yaml.load('./swagger.yaml')
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
 
-//validacion de implementacion de http 
-app.use((req, res, next) => {
-  res.status(501).send('error 501: metodo no implementad')
-})
+
 
 app.get('/', (req, res) => {
   res.send('Hello World from Express!')
@@ -90,4 +87,9 @@ app.listen(port, () => {
   //console.log(`Example app listening at http://localhost:${port}`)
   console.log(`Server listening at http://127.0.0.1:${port}`)
 
+})
+
+//validacion de implementacion de http 
+app.use((req, res, next) => {
+  res.status(501).send('error 501: metodo no implementad')
 })
