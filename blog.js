@@ -1,7 +1,7 @@
-import React from 'react'
+/*import React from 'react'
 import Header from './header'
 import Footer from './footer'
-
+*/
 
 function Blog() {
     return (
@@ -12,4 +12,4 @@ function Blog() {
     )
 }
 
-export default Blog
+//export default Blog
