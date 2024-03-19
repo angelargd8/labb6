@@ -8,6 +8,8 @@ const express = require('express')
 const db = require('./db.js')
 const swaggerUi = require('swagger-ui-express')
 const yaml = require('js-yaml')
+//para luego mandar la path al index
+const path = require('path')
 
 const app = express()
 
@@ -18,7 +20,9 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
 
 
 app.get('/', (req, res) => {
-  res.send('Hello World from Express!')
+  //res.send('Hello World from Express!')
+  //mandarle aqui el index
+  res.sendFile(path.join(__dirname, 'index.html'))
   console.log('Hello World from Express!')
 })
 
@@ -90,6 +94,6 @@ app.listen(port, () => {
 })
 
 //validacion de implementacion de http 
-app.use((req, res, next) => {
+app.use((req, res) => {
   res.status(501).send('error 501: metodo no implementad')
 })
