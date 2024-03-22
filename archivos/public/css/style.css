@@ -1,0 +1,23 @@
+body{
+    background-repeat: no-repeat ;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #ffffff !important;
+    
+    
+}
+
+body.index{
+    background-color: #ffffff;
+    background-image: url(../img/wallpaper2.jpg);
+}
+
+nav {
+    background-color: #500640b9;
+    color: #ffffff !important;
+}
+
+nav .navbar-brand,
+nav .nav-link {
+    color: #ffffff !important;
+}

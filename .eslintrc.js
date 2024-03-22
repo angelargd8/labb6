@@ -8,6 +8,7 @@ module.exports = {
         "eslint:recommended",
         "plugin:react/recommended"
     ],
+    "ignorePatterns": ["**/*.css"], 
     "overrides": [
         {
             "env": {
@@ -26,9 +27,11 @@ module.exports = {
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        "babel"
     ],
     "rules": {
         "semi": ["error", "never"]
+        
     }
 }
