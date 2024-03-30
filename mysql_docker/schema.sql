@@ -15,3 +15,9 @@ CREATE TABLE IF NOT EXISTS blogs (
     descripcion TEXT NOT NULL, 
     imagen MEDIUMTEXT NOT NULL
 );
+
+CREATE TABLE IF NOT EXISTS funciones (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    funcion VARCHAR(255) NOT NULL,
+    informacion TEXT NOT NULL,
+);
