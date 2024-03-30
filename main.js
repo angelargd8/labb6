@@ -6,39 +6,25 @@ const swaggerUi = require('swagger-ui-express')
 const yaml = require('js-yaml')
 //para luego mandar la path al index
 const path = require('path')
-
 const app = express()
 
 //middleware para json Aca es donde se usa los cors
-/*app.use(cors({
-  origin: `http://127.0.0.1:3000`
-}))*/
-/*app.use(cors({
-  origin: /^http:\/\/127\.0\.0\.1(:\d+)?$/
-}))*/
 app.use(cors());
 
-
 app.use(express.json())
-
 
 //cargar el archivo YAML que describe endpoints
 const swaggerDocument = yaml.load('./swagger.yaml')
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
-
 app.use(express.static(path.join(__dirname, 'public')))
-
 
 app.get('/', (req, res) => {
   //res.send('Hello World from Express!')
-  //mandarle aqui el index
-  //res.sendFile(path.join(__dirname, 'index.html'))
   console.log('Hello World from Express!')
 })
 
 
 app.get('/index.html', (req, res) => {
-  //res.send('Hello World from Express!')
   //mandarle aqui el index
   res.sendFile(path.join(__dirname, './index.html'))
   console.log('Hello World from Express!')
@@ -47,26 +33,37 @@ app.get('/index.html', (req, res) => {
 
 app.get('/funciones', (req, res) => {
   res.send('Hello World from Express!')
-  //res.redirect('https://www.google.com')
- 
 })
 
 app.get('/blogs', (req, res) => {
   res.send('Hello World from Express!')
-  
 })
 
 app.get('/type', (req, res) => {
   res.send('Hello World from Express!')
-  
 })
 
 
 //--get all posts
-app.get('/posts', async (req, res) => {
+app.get('/posts/info', async (req, res) => {
   const posts = await db.getAllPosts()
-  res.json(posts)//
-  res.status(200).json(posts)
+  if(posts.length === 0) {
+    res.status(200).json({message: 'Empty state: No posts found'})
+  }else{
+    res.status(200).json(posts)
+  } 
+  console.log('posts', posts)
+})
+
+
+//--get all posts from  functions
+app.get('/posts/f', async (req, res) => {
+  const posts = await db.getAllPostsFunctions()
+  if(posts.length === 0) {
+    res.status(200).json({message: 'Empty state:No posts found'})
+  }else{
+    res.status(200).json(posts)
+  } 
   console.log('posts', posts)
 })
 
@@ -76,6 +73,22 @@ app.post('/posts', cors({ origin: 'http://127.0.0.1:3000' }), async (req, res) =
     console.log(req)
     const { title, content, descripcion, imagen } = req.body
     const newPost = await db.createPost(title, content, descripcion, imagen)
+    res.json({ message: 'Post created' })//
+    res.status(200).json(newPost)
+
+    console.log('Post created')
+  } catch (error) {
+    res.status(400).json({ message: error.message })
+  }
+})
+
+
+//--create post 2
+app.post('/posts/p', cors({ origin: 'http://127.0.0.1:3000' }), async (req, res) => {
+  try{
+    console.log(req)
+    const { funcion, informacion } = req.body
+    const newPost = await db.createPost2(funcion, informacion )
     res.json({ message: 'Post created' })//
     res.status(200).json(newPost)
 
@@ -117,23 +130,13 @@ app.delete('/post/:postId', async (req, res) => {
 
 })
 
-/*
-app.delete('/posts/:postId', async (req, res) => {
-  const { id } = req.params
-  await db.deletePost(id)
-  res.status(204).end()
-})
-*/
-
 
 //inicio del server
 const port = 3000
 app.listen(port, () => {
   //console.log(`Example app listening at http://localhost:${port}`)
   console.log(`Server listening at http://127.0.0.1:${port}`)
-
 })
-
 //validacion de implementacion de http 
 app.use((req, res) => {
   res.status(501).send('error 501: metodo no implementad')

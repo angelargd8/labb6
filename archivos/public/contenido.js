@@ -3,9 +3,8 @@ function Contenido(){
     return (
         <center>
             <div>
-                
-                <h1>Blog</h1>
-                <p>Este es un sitio web simple construido con React y Babel.</p>
+                <h1 class="titulo">MBTI</h1>
+                <p class="subtitulo">Este es un blog dedicado a informar acerca del MBTI, debido a que existe mucha desinformación en internet</p>
 
             </div>
         </center>  

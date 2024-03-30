@@ -38,14 +38,25 @@ async function deletePost(id){
 }
 
 
- 
+async function createPost2(funcion, informacion) {
+    const [result] = await conn.query('INSERT INTO blog_db.funciones (funcion, informacion) VALUES (?, ?)', [funcion, informacion])
+    return result
+}
+
+async function getAllPostsFunctions() {
+    const [rows] = await conn.query('SELECT * FROM blog_db.funciones')
+    return rows
+   }
+   
 
 module.exports= {
     getAllPosts,
     createPost, 
     getPostId,
     updatePost,
-    deletePost
+    deletePost,
+    createPost2,
+    getAllPostsFunctions
  }
 
  //validarConexion()

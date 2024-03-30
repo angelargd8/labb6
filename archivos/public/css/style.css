@@ -2,9 +2,8 @@ body{
     background-repeat: no-repeat ;
     background-size: cover;
     background-attachment: fixed;
-    color: #ffffff !important;
-    
-    
+    color: #ffffff !important;    
+    justify-content: space-between; 
 }
 
 body.index{
@@ -21,3 +20,80 @@ nav .navbar-brand,
 nav .nav-link {
     color: #ffffff !important;
 }
+
+
+div.footerClass{
+    padding: 10%;
+}
+
+h1.titulo{
+    font-size: 110px !important;
+    text-align: center;
+    color: #dbbfbf !important;
+    padding: 12%;
+}
+
+p.subtitulo{
+    color: #bd8c8c !important;
+}
+
+div.data{
+    background-color: #50064088;
+    color: #ffffff !important;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+}
+
+div.info{
+    padding: 20px;
+    border-radius: 10px;
+    position: flex-center;
+
+}
+
+div.data2,
+div.info2{
+    background-color: #500640b9;
+    padding: 20px;
+    border-radius: 10px;
+    position: flex-center;
+    margin-right: 20px;
+    justify-content: center; 
+    margin-bottom: 30px;
+
+}
+
+.info2 img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 70%;
+    height: auto;
+}
+
+.info2 p,.data2 p {
+    white-space: pre-wrap;
+}
+
+
+@keyframes spinner {
+    to {transform: rotate(360deg);}
+  }
+  
+  .spinner:before {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    margin-top: -10px;
+    margin-left: -10px;
+    border-radius: 70%;
+    border: 2px solid #ccc;
+    border-top-color: #333;
+    animation: spinner .6s linear infinite;
+  }
+  

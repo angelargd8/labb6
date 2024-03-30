@@ -2,8 +2,9 @@ function Blog() {
     return (
         <div>
             <Header/>
-            <Contenido/>      
-            <PostData/>   
+            <Contenido/> 
+            <GetInfo/>       
+            <GetData/>  
             <Footer/>
 
         </div>

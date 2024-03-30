@@ -42,7 +42,11 @@ function PostData() {
                 <input type="text" value={imagen} onChange={e => setImagen(e.target.value)} />
             </label>
             <button type="submit">Enviar</button>
+            
+            
         </form>
+      
+        
 
 
 
